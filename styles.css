@@ -1,0 +1,30 @@
+/* Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%) */
+
+:root {
+    --blue-100: hsl(243, 100%, 93%);
+    --blue-200: hsl(229, 7%, 55%);
+    --blue-300: hsl(228, 56%, 26%);
+    --blue-400: hsl(229, 57%, 11%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", serif;
+}
+
+body {
+    position: relative;
+    display: block;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--blue-400);
+}
+
+.background {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -60px;
+}
