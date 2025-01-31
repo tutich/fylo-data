@@ -23,14 +23,31 @@
             <source srcset="./images/bg-desktop.png" media="(min-width: 601px)" />
             <img src="./images/bg-desktop.png" alt="background" class="background" />
         </picture>
-        <div>
-            <div>
+        <div class="cards">
+            <div class="card-1">
                 <div>
                     <img src="./images/logo.svg" alt="">
                 </div>
+                <div class="images">
+                    <img src="./images/icon-document.svg" alt="doc" class="doc">
+                    <img src="./images/icon-folder.svg" alt="folder" class="folder">
+                    <img src="./images/icon-upload.svg" alt="upload" class="upload">
+                </div>
             </div>
-            <div>
-                <p>You’ve used 815 GB of your storage 185 GB Left 0 GB 1000 GB</p>
+            <div class="card-2">
+                <p>You’ve used <strong class="strong">815 GB</strong> of your storage 185 GB Left</p>
+                <div class="progress-bar">
+                    <div class="progress">
+                        <div class="progress-fill">
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="progress-labels">
+                        <span>0 GB</span>
+                        <span>1000 GB</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
