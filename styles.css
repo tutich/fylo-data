@@ -27,34 +27,38 @@ body {
 .background {
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     bottom: -60px;
     z-index: -1;
 }
 .cards {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     gap: 16px;
-    width: 100%;
+    width: 60vw;
+    top: 100px;
     margin: 0 auto;
+    transform: translateY(-32px);
     z-index: 1;
-
 }
 
 .card-1 {
-    width: 40%;
-    padding: 14px;
+    flex: 2;
+    padding: 18px;
     background-color: var(--blue-300);
     align-items: start;
+    border-radius: 8px;
+    border-top-right-radius: 4em;
 }
 
 .card-2{
-    width: 60%;
+    flex: 3;
     padding: 20px;
     background-color: var(--blue-300);
     text-align: start;
     border-radius: 12px;
+    position: relative;
 }
 
 .progress-bar {
@@ -63,24 +67,93 @@ body {
 
 .progress {
     width: 100%;
-    height: 12px;
+    height: 14px;
     background-color: var(--blue-400);
     border-radius: 12px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .progress-fill {
     width: 81.5%;
-    height: 100%;
-    background-color: linear-gradient(to right, hsl(6, 100%, 80%) to hsl(335, 100%, 65%));
+    height: 80%;
+    border-radius: 12px;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    
+    position: relative;
 }
+.dot {
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    border-radius: 50%;
+    background: var(--blue-100);
+    right: 2px;
+    bottom: 1px;
+    align-items: center;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: var(--blue-100);
+    font-weight: 700;
+    font-size: 14px;
+}
+
 
 .images {
-    padding-top: 6px;
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    align-items: center;
 }
 
-
 .doc {
-   
+    height: 16px;
+    width: 16px;
+}
+
+.img-1 {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--blue-400);
+}
+
+.folder {
+    height: 16px;
+    width: 16px;
+}
+
+.img-2 {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--blue-400);
+}
+
+.upload {
+    height: 14px;
+    width: 18px;
+}
+
+.img-3 {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     background-color: var(--blue-400);
 }
 
@@ -92,4 +165,61 @@ p {
 
 .strong {
     color: var(--blue-100)
+}
+
+.popup {
+    position: absolute;
+    top: -20px;
+    right: 28px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 14px;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+.popup::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid white;
+    border-bottom: 12px solid transparent;
+    border-top: 12px solid transparent;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+@media (max-width: 600px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    .card-1 {
+        width: 100%;
+    }
+
+    body {
+        background-color: unset;
+        top: -3em;
+    }
+
+    .popup {
+        background-color: white;
+        position: absolute;
+        border-radius: 8px;
+        padding: 8px 12px;
+        text-align: center;
+        right: 0;
+        top: 8em;
+        transform: translateX(-70%);
+    }
+
+    .popup::after {
+        display: none;
+    }
 }
